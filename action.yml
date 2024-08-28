@@ -14,6 +14,7 @@ runs:
   using: composite
   steps: 
     - name: Echo input name
+      shell: bash
       env:
         NAME: ${{ inputs.name }}
       run: |
@@ -21,6 +22,7 @@ runs:
 
     - name: Count length of the name
       id: length_calculation
+      shell: bash
       run: |
         name=${{ inputs.name }}
         length=${#name}
